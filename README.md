@@ -1,20 +1,21 @@
 # Features
 <h2 align="center">
-Automatically tracks the required fish for achievements.
+
+<span>Automatically tracks the required fish for achievements.</span>
 <br>
-<img src="./resources/UI.png" width="500"/>
+<img src="./resources/UI.png" width="500" style="padding-top: 15px;"/>
 
 <br>
 
-Tracks the current time on the spectral current.
+<span>Tracks the current time on the spectral current.</span>
 <br>
-<img src="./resources/Spectral_Counter.png" width="500"/>
+<img src="./resources/Spectral_Counter.png" width="500" style="padding-top: 15px;"/>
 
 <br>
 
-Resets the spectral fish count when entering a new zone.
+<span>Resets the spectral fish count when entering a new zone.</span>
 <br>
-<img src="./resources/Spectral_Reset.png" width="500"/>
+<img src="./resources/Spectral_Reset.png" width="500" style="padding-top: 15px;"/>
 </h2>
 
 <br>
