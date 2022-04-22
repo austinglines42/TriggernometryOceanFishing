@@ -41,7 +41,7 @@
 2. Within Triggernometry select the folder you would like to import it into. Then click the "Import" button within the Triggernometry tab.
 3. Select "Load from file or URI" then select the file that you downloaded, then click "Next >".
 4. It will give you a warning about arbitrary code execution. Just click Import. It is safe to use but you can read more about it in the Limitations and Bugs section.
-5. It is not working and ready to go! Happy Fishing!
+5. It is now working and ready to go! Happy Fishing!
 
 <br>
 
