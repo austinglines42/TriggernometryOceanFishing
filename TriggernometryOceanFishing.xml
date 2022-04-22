@@ -19,6 +19,7 @@
               </Action>
             </Actions>
             <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
           </Trigger>
           <Trigger Enabled="true" Source="FFXIVNetwork" Name="Fugu" Id="e2a50b13-d83f-4334-8f3a-e3553c23e14b" RegularExpression="^00\|.*\|\|(?&lt;playerName&gt;[A-Z][a-z']* [A-Z][a-z']*|You)\w* (land|lands) (?&lt;count&gt;an|a|\d) .(?i)(Metallic Boxfish|Mythril Boxfish|Lampfish|Silencer|Crow Puffer|Honeycomb Fish|Garum Jug|Pearl Bombfish)\w* measuring \d*\.\d ilms!">
             <Actions>
@@ -37,6 +38,7 @@
               <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerName}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
               <ConditionSingle Enabled="true" ExpressionL="${playerName}" ExpressionTypeL="String" ExpressionR="You" ExpressionTypeR="String" ConditionType="StringEqualCase" />
             </Condition>
+            <Conditions />
           </Trigger>
           <Trigger Enabled="true" Source="FFXIVNetwork" Name="Octopodes" Id="d2bd56a9-53ef-4af5-836e-551de1c10ee0" RegularExpression="^00\|.*\|\|(?&lt;playerName&gt;[A-Z][a-z']* [A-Z][a-z']*|You)\w* (land|lands) (?&lt;count&gt;an|a|\d) .(?i)(Cyan Octop|Merman's Mane|Mopbeard)\w* measuring \d*\.\d ilms!">
             <Actions>
@@ -55,15 +57,16 @@
               <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerName}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
               <ConditionSingle Enabled="true" ExpressionL="${playerName}" ExpressionTypeL="String" ExpressionR="You" ExpressionTypeR="String" ConditionType="StringEqualCase" />
             </Condition>
+            <Conditions />
           </Trigger>
           <Trigger Enabled="true" Source="FFXIVNetwork" Name="Sharks" Id="e3649d61-5dd7-474e-bdc9-2f2abe26fb47" RegularExpression="^00\|.*\|\|(?&lt;playerName&gt;[A-Z][a-z']* [A-Z][a-z']*|You)\w* (land|lands) (?&lt;count&gt;an|a|\d) .(?i)(Tarnished Shark|Ghost Shark|Quicksilver Blade|Funnel Shark|Chrome Hammerhead|Sweeper|Executioner)\w* measuring \d*\.\d ilms!">
             <Actions>
-              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="sharksCount" VariableExpression="${var:sharksCount}+${count}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="oceanSharksCount" VariableExpression="${var:oceanSharksCount}+${count}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                 <Condition Enabled="true" Grouping="Or">
                   <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                 </Condition>
               </Action>
-              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="sharksCount" VariableExpression="${var:sharksCount} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="oceanSharksCount" VariableExpression="${var:oceanSharksCount} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                 <Condition Enabled="true" Grouping="Or">
                   <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="RegexMatch" />
                 </Condition>
@@ -73,6 +76,7 @@
               <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerName}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
               <ConditionSingle Enabled="true" ExpressionL="${playerName}" ExpressionTypeL="String" ExpressionR="You" ExpressionTypeR="String" ConditionType="StringEqualCase" />
             </Condition>
+            <Conditions />
           </Trigger>
           <Trigger Enabled="true" Source="FFXIVNetwork" Name="Spectral" Id="b841a559-d6d9-479f-bd55-d1d87c84844f" RegularExpression="^00\|[^|]*\|[^|]*\|\|(You|\D* \D*) (land|lands) a .(spectresaur|spectral .*) measuring \d*\.\d ilms!">
             <Actions>
@@ -81,6 +85,7 @@
               </Action>
             </Actions>
             <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
           </Trigger>
           <Trigger Enabled="true" Source="FFXIVNetwork" Name="Jellyfish" Id="2638a520-4d4f-4ed4-bcf2-e08a9b81b3b0" RegularExpression="^00\|.*\|\|(?&lt;playerName&gt;[A-Z][a-z']* [A-Z][a-z']*|You)\w* (land|lands) (?&lt;count&gt;an|a|\d) .(?i)(La Noscean Jell|Sea Nettle|Floating Saucer)\w* measuring \d*\.\d ilms!">
             <Actions>
@@ -99,6 +104,7 @@
               <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerName}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
               <ConditionSingle Enabled="true" ExpressionL="${playerName}" ExpressionTypeL="String" ExpressionR="You" ExpressionTypeR="String" ConditionType="StringEqualCase" />
             </Condition>
+            <Conditions />
           </Trigger>
           <Trigger Enabled="true" Source="FFXIVNetwork" Name="Crabs" Id="006872fb-9974-4d9d-b016-d9ad39117b6f" RegularExpression="^00\|.*\|\|(?&lt;playerName&gt;[A-Z][a-z']* [A-Z][a-z']*|You)\w* (land|lands) (?&lt;count&gt;an|a|\d) .(?i)(Tortoiseshell Crab|Titanshell Crab|Net Crawler|Bartholomew the Chopper|Thaliak Crab|Bloodpolish Crab|Oracular Crab|Exterminator)\w* measuring \d*\.\d ilms!">
             <Actions>
@@ -117,6 +123,7 @@
               <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerName}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
               <ConditionSingle Enabled="true" ExpressionL="${playerName}" ExpressionTypeL="String" ExpressionR="You" ExpressionTypeR="String" ConditionType="StringEqualCase" />
             </Condition>
+            <Conditions />
           </Trigger>
           <Trigger Enabled="true" Source="FFXIVNetwork" Name="Seadragons" Id="ba8b4f94-1fc9-4388-bcc1-11809091d42d" RegularExpression="^00\|.*\|\|(?&lt;playerName&gt;[A-Z][a-z']* [A-Z][a-z']*|You)\w* (land|lands) (?&lt;count&gt;an|a|\d) .(?i)(Shaggy Seadragon|Aetheric Seadragon|Coral Seadragon)\w* measuring \d*\.\d ilms!">
             <Actions>
@@ -135,6 +142,7 @@
               <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerName}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
               <ConditionSingle Enabled="true" ExpressionL="${playerName}" ExpressionTypeL="String" ExpressionR="You" ExpressionTypeR="String" ConditionType="StringEqualCase" />
             </Condition>
+            <Conditions />
           </Trigger>
         </Triggers>
       </Folder>
@@ -164,6 +172,7 @@
           </Action>
         </Actions>
         <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
       </Trigger>
       <Trigger Enabled="true" Source="FFXIVNetwork" Name="Ocean Fishing Complete" Id="54ce230b-a4fc-4c21-aa6e-42627e6a531c" RegularExpression="(^00\|[^|]*\|[^|]*\|Foerzagyl\|That's all the fishin' we'll be doin' today. Now's the time to measure your catch!)">
         <Actions>
@@ -178,6 +187,7 @@
           </Action>
         </Actions>
         <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
       </Trigger>
       <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Start Ocean Fishing" Id="9afa89a8-e350-4f97-816b-6e8fdf7e5073" RegularExpression="(^00\|[^|]*\|[^|]*\|Foerzagyl\|)">
         <Actions>
@@ -251,6 +261,7 @@
         <Condition Enabled="true" Grouping="Or">
           <ConditionSingle Enabled="true" ExpressionL="${elvar:oceanObjectives}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
         </Condition>
+        <Conditions />
       </Trigger>
       <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Spectral Triggered" Id="128916f5-c934-41ee-8df7-384b7de94e0e" RegularExpression="(^00\|[^|]*\|[^|]*\|Foerzagyl\|.*(?i)(spectral current))">
         <Actions>
@@ -275,6 +286,7 @@
           </Action>
         </Actions>
         <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
       </Trigger>
       <Trigger Enabled="true" Name="# About" Id="14c4fa53-8af6-4ebe-8c73-802f329a2800" RegularExpression="" Description="Everything should work automatically without configuration.&#xD;&#xA;If you find any bugs please feel free to message me on discord: Aubis2#1355&#xD;&#xA;Github for the project https://github.com/austinglines42/TriggernometryOceanFishing">
         <Actions />
