@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<TriggernometryExport Version="1.0.0">
+  <ExportedFolder Id="6961b04a-05b0-41ce-971d-5ab8927cae38" Name="Ocean Fishing Helper" Enabled="true">
+    <Folders>
+      <Folder Id="5cda3b93-a642-47ec-bd5b-e402fe768ccb" Name="Objectives" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Manta" Id="314bd0d5-1f06-441e-a21f-e097e35e0691" RegularExpression="^00\|.*\|\|You land (?&lt;count&gt;an|a|\d) .(?i)(Goobbue Ray|Jetborne Manta|Skaldminni|Panoptes)\w* measuring \d*\.\d ilms!">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="oceanMantasCount" VariableExpression="${var:oceanMantasCount}+${count}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="oceanMantasCount" VariableExpression="${var:oceanMantasCount} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Fugu" Id="e2a50b13-d83f-4334-8f3a-e3553c23e14b" RegularExpression="^00\|.*\|\|(?&lt;playerName&gt;[A-Z][a-z']* [A-Z][a-z']*|You)\w* (land|lands) (?&lt;count&gt;an|a|\d) .(?i)(Metallic Boxfish|Mythril Boxfish|Lampfish|Silencer|Crow Puffer|Honeycomb Fish|Garum Jug|Pearl Bombfish)\w* measuring \d*\.\d ilms!">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="oceanFuguCount" VariableExpression="${var:oceanFuguCount}+${count}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="oceanFuguCount" VariableExpression="${var:oceanFuguCount} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerName}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${playerName}" ExpressionTypeL="String" ExpressionR="You" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Octopodes" Id="d2bd56a9-53ef-4af5-836e-551de1c10ee0" RegularExpression="^00\|.*\|\|(?&lt;playerName&gt;[A-Z][a-z']* [A-Z][a-z']*|You)\w* (land|lands) (?&lt;count&gt;an|a|\d) .(?i)(Cyan Octop|Merman's Mane|Mopbeard)\w* measuring \d*\.\d ilms!">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="oceanOctopodesCount" VariableExpression="${var:oceanOctopodesCount}+${count}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="oceanOctopodesCount" VariableExpression="${var:oceanOctopodesCount} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerName}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${playerName}" ExpressionTypeL="String" ExpressionR="You" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Sharks" Id="e3649d61-5dd7-474e-bdc9-2f2abe26fb47" RegularExpression="^00\|.*\|\|(?&lt;playerName&gt;[A-Z][a-z']* [A-Z][a-z']*|You)\w* (land|lands) (?&lt;count&gt;an|a|\d) .(?i)(Tarnished Shark|Ghost Shark|Quicksilver Blade|Funnel Shark|Chrome Hammerhead|Sweeper|Executioner)\w* measuring \d*\.\d ilms!">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="sharksCount" VariableExpression="${var:sharksCount}+${count}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="sharksCount" VariableExpression="${var:sharksCount} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerName}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${playerName}" ExpressionTypeL="String" ExpressionR="You" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Spectral" Id="b841a559-d6d9-479f-bd55-d1d87c84844f" RegularExpression="^00\|[^|]*\|[^|]*\|\|(You|\D* \D*) (land|lands) a .(spectresaur|spectral .*) measuring \d*\.\d ilms!">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="oceanSpectralCount" VariableExpression="${var:oceanSpectralCount}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Jellyfish" Id="2638a520-4d4f-4ed4-bcf2-e08a9b81b3b0" RegularExpression="^00\|.*\|\|(?&lt;playerName&gt;[A-Z][a-z']* [A-Z][a-z']*|You)\w* (land|lands) (?&lt;count&gt;an|a|\d) .(?i)(La Noscean Jell|Sea Nettle|Floating Saucer)\w* measuring \d*\.\d ilms!">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="oceanJellyfishCount" VariableExpression="${var:oceanJellyfishCount}+${count}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="oceanJellyfishCount" VariableExpression="${var:oceanJellyfishCount} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerName}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${playerName}" ExpressionTypeL="String" ExpressionR="You" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Crabs" Id="006872fb-9974-4d9d-b016-d9ad39117b6f" RegularExpression="^00\|.*\|\|(?&lt;playerName&gt;[A-Z][a-z']* [A-Z][a-z']*|You)\w* (land|lands) (?&lt;count&gt;an|a|\d) .(?i)(Tortoiseshell Crab|Titanshell Crab|Net Crawler|Bartholomew the Chopper|Thaliak Crab|Bloodpolish Crab|Oracular Crab|Exterminator)\w* measuring \d*\.\d ilms!">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="oceanCrabsCount" VariableExpression="${var:oceanCrabsCount}+${count}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="oceanCrabsCount" VariableExpression="${var:oceanCrabsCount} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerName}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${playerName}" ExpressionTypeL="String" ExpressionR="You" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Seadragons" Id="ba8b4f94-1fc9-4388-bcc1-11809091d42d" RegularExpression="^00\|.*\|\|(?&lt;playerName&gt;[A-Z][a-z']* [A-Z][a-z']*|You)\w* (land|lands) (?&lt;count&gt;an|a|\d) .(?i)(Shaggy Seadragon|Aetheric Seadragon|Coral Seadragon)\w* measuring \d*\.\d ilms!">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="oceanSeadragonsCount" VariableExpression="${var:oceanSeadragonsCount}+${count}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                </Condition>
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="oceanSeadragonsCount" VariableExpression="${var:oceanSeadragonsCount} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="(a|an)" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerName}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${playerName}" ExpressionTypeL="String" ExpressionR="You" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+            </Condition>
+          </Trigger>
+        </Triggers>
+      </Folder>
+    </Folders>
+    <Triggers>
+      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="New Zone" Id="b6a5a0b9-bff3-48ae-8094-a8b689dee732" RegularExpression="(^00\|[^|]*\|[^|]*\|Foerzagyl\|We'll soon be off to our next destination! Raise your rods and make ready to set sail!)|(Next Zone)">
+        <Actions>
+          <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="oceanSpectralCount" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" TextAuraFontSize="14.25" TextAuraForeground="#80FFFF" TextAuraBackground="Black" TextAuraName="oceanSpectralCounter" TextAuraExpression="${var:oceanSpectralCount} Spectrals" TextAuraXIniExpression="(${_screenwidth}/2)-200" TextAuraYIniExpression="(${_screenheight}/2)+210" TextAuraWIniExpression="400/(${var:oceanAchievements}+1)" TextAuraHIniExpression="40" TextAuraOIniExpression="80" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="3" OBSEndPoint="" VariableOp="SetNumeric" VariableName="oceanSpectralTime" VariableExpression="${var:oceanSpectralTime} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:oceanSpectralTime}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+              <ConditionSingle Enabled="true" ExpressionL="${oceanSpectralActive}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="4" OBSEndPoint="" VariableOp="SetNumeric" VariableName="oceanSpectralTime" VariableExpression="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:oceanSpectralActive}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="5" OBSEndPoint="" VariableOp="SetNumeric" VariableName="oceanSpectralActive" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Ocean Fishing Complete" Id="54ce230b-a4fc-4c21-aa6e-42627e6a531c" RegularExpression="(^00\|[^|]*\|[^|]*\|Foerzagyl\|That's all the fishin' we'll be doin' today. Now's the time to measure your catch!)|(end fishing)">
+        <Actions>
+          <Action OrderNumber="1" VariableOp="UnsetRegex" VariableName="^ocean\w*" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" ListVariableOp="UnsetRegex" ListVariableName="^ocean\w*" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="3" TextAuraOp="DeactivateAuraRegex" TextAuraFontSize="8.25" TextAuraName="^ocean\w*" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Start Ocean Fishing" Id="9afa89a8-e350-4f97-816b-6e8fdf7e5073" RegularExpression="(^00\|[^|]*\|[^|]*\|Foerzagyl\|)|(Start Ocean Fishing)">
+        <Actions>
+          <Action OrderNumber="1" ExecScriptExpression="using Triggernometry.Variables;&#xD;&#xA;&#xD;&#xA;// Adds 2 hours per testHour to the current time to test other routes&#xD;&#xA;int testHour = 0;&#xD;&#xA;&#xD;&#xA;// All code to calculate the current route is from Lulu's Tools&#xD;&#xA;// You can read more about it here: https://ffxiv.pf-n.co/ocean-fishing/about&#xD;&#xA;string[] PATTERN = {&#xD;&#xA;    &quot;BD&quot;, &quot;TD&quot;, &quot;ND&quot;, &quot;RD&quot;, &quot;BS&quot;, &quot;TS&quot;, &quot;NS&quot;, &quot;RS&quot;, &quot;BN&quot;, &quot;TN&quot;, &quot;NN&quot;, &quot;RN&quot;,&#xD;&#xA;    &quot;TD&quot;, &quot;ND&quot;, &quot;RD&quot;, &quot;BS&quot;, &quot;TS&quot;, &quot;NS&quot;, &quot;RS&quot;, &quot;BN&quot;, &quot;TN&quot;, &quot;NN&quot;, &quot;RN&quot;, &quot;BD&quot;,&#xD;&#xA;    &quot;ND&quot;, &quot;RD&quot;, &quot;BS&quot;, &quot;TS&quot;, &quot;NS&quot;, &quot;RS&quot;, &quot;BN&quot;, &quot;TN&quot;, &quot;NN&quot;, &quot;RN&quot;, &quot;BD&quot;, &quot;TD&quot;,&#xD;&#xA;    &quot;RD&quot;, &quot;BS&quot;, &quot;TS&quot;, &quot;NS&quot;, &quot;RS&quot;, &quot;BN&quot;, &quot;TN&quot;, &quot;NN&quot;, &quot;RN&quot;, &quot;BD&quot;, &quot;TD&quot;, &quot;ND&quot;,&#xD;&#xA;    &quot;BS&quot;, &quot;TS&quot;, &quot;NS&quot;, &quot;RS&quot;, &quot;BN&quot;, &quot;TN&quot;, &quot;NN&quot;, &quot;RN&quot;, &quot;BD&quot;, &quot;TD&quot;, &quot;ND&quot;, &quot;RD&quot;,&#xD;&#xA;    &quot;TS&quot;, &quot;NS&quot;, &quot;RS&quot;, &quot;BN&quot;, &quot;TN&quot;, &quot;NN&quot;, &quot;RN&quot;, &quot;BD&quot;, &quot;TD&quot;, &quot;ND&quot;, &quot;RD&quot;, &quot;BS&quot;,&#xD;&#xA;    &quot;NS&quot;, &quot;RS&quot;, &quot;BN&quot;, &quot;TN&quot;, &quot;NN&quot;, &quot;RN&quot;, &quot;BD&quot;, &quot;TD&quot;, &quot;ND&quot;, &quot;RD&quot;, &quot;BS&quot;, &quot;TS&quot;,&#xD;&#xA;    &quot;RS&quot;, &quot;BN&quot;, &quot;TN&quot;, &quot;NN&quot;, &quot;RN&quot;, &quot;BD&quot;, &quot;TD&quot;, &quot;ND&quot;, &quot;RD&quot;, &quot;BS&quot;, &quot;TS&quot;, &quot;NS&quot;,&#xD;&#xA;    &quot;BN&quot;, &quot;TN&quot;, &quot;NN&quot;, &quot;RN&quot;, &quot;BD&quot;, &quot;TD&quot;, &quot;ND&quot;, &quot;RD&quot;, &quot;BS&quot;, &quot;TS&quot;, &quot;NS&quot;, &quot;RS&quot;,&#xD;&#xA;    &quot;TN&quot;, &quot;NN&quot;, &quot;RN&quot;, &quot;BD&quot;, &quot;TD&quot;, &quot;ND&quot;, &quot;RD&quot;, &quot;BS&quot;, &quot;TS&quot;, &quot;NS&quot;, &quot;RS&quot;, &quot;BN&quot;,&#xD;&#xA;    &quot;NN&quot;, &quot;RN&quot;, &quot;BD&quot;, &quot;TD&quot;, &quot;ND&quot;, &quot;RD&quot;, &quot;BS&quot;, &quot;TS&quot;, &quot;NS&quot;, &quot;RS&quot;, &quot;BN&quot;, &quot;TN&quot;,&#xD;&#xA;    &quot;RN&quot;, &quot;BD&quot;, &quot;TD&quot;, &quot;ND&quot;, &quot;RD&quot;, &quot;BS&quot;, &quot;TS&quot;, &quot;NS&quot;, &quot;RS&quot;, &quot;BN&quot;, &quot;TN&quot;, &quot;NN&quot;&#xD;&#xA;};&#xD;&#xA;string changedBy = &quot;Ocean Fish Helper&quot;;&#xD;&#xA;long TWO_HOURS = 2 * 60 * 60 * 1000;&#xD;&#xA;int OFFSET = 88;&#xD;&#xA;long currTime = DateTimeOffset.Now.ToUnixTimeMilliseconds() + (TWO_HOURS * testHour);&#xD;&#xA;long voyageNumber = currTime / TWO_HOURS;&#xD;&#xA;string route = PATTERN[(OFFSET + voyageNumber) % PATTERN.Length];&#xD;&#xA;&#xD;&#xA;// Initialize the VariableList to return to Triggernometry&#xD;&#xA;VariableList objectivesVL = new VariableList();&#xD;&#xA;switch (route)&#xD;&#xA;{&#xD;&#xA;    case &quot;BD&quot;:&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Crabs&quot; }, changedBy);&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Seafaring Toad&quot; }, changedBy);&#xD;&#xA;        break;&#xD;&#xA;    case &quot;TD&quot;:&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Fugu&quot; }, changedBy);&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Mantas&quot; }, changedBy);&#xD;&#xA;        break;&#xD;&#xA;    case &quot;ND&quot;:&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Sothis&quot; }, changedBy);&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Elasmosaurus&quot; }, changedBy);&#xD;&#xA;        break;&#xD;&#xA;    case &quot;RD&quot;:&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Sharks&quot; }, changedBy);&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Coral Manta&quot; }, changedBy);&#xD;&#xA;        break;&#xD;&#xA;    case &quot;BS&quot;:&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Hafgufa&quot; }, changedBy);&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Elasmosaurus&quot; }, changedBy);&#xD;&#xA;        break;&#xD;&#xA;    case &quot;TS&quot;:&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Hafgufa&quot; }, changedBy);&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Placodus&quot; }, changedBy);&#xD;&#xA;        break;&#xD;&#xA;    case &quot;NS&quot;:&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Seadragons&quot; }, changedBy);&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Coral Manta&quot; }, changedBy);&#xD;&#xA;        break;&#xD;&#xA;    case &quot;RS&quot;:&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Sothis&quot; }, changedBy);&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Stonescale&quot; }, changedBy);&#xD;&#xA;        break;&#xD;&#xA;    case &quot;BN&quot;:&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Mantas&quot; }, changedBy);&#xD;&#xA;        break;&#xD;&#xA;    case &quot;TN&quot;:&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Fugu&quot; }, changedBy);&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Stonescale&quot; }, changedBy);&#xD;&#xA;        break;&#xD;&#xA;    case &quot;NN&quot;:&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Octopodes&quot; }, changedBy);&#xD;&#xA;        break;&#xD;&#xA;    case &quot;RN&quot;:&#xD;&#xA;        objectivesVL.Push(new VariableScalar() { Value = &quot;Jellyfish&quot; }, changedBy);&#xD;&#xA;        break;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;// Returns the route objectives to Triggernometry.&#xD;&#xA;TriggernometryHelpers.SetListVariable(false, &quot;oceanObjectives&quot;, objectivesVL);" JsonOperationType="GET" JsonCacheRequest="True" JsonEndpointExpression="https://ffxiv.pf-n.co/ocean-fishing" MessageBoxText="${_env[x]}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ExecuteScript">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="oceanSpectralCount" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="ocean${lvar:oceanObjectives[1]}Count" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="ocean${lvar:oceanObjectives[2]}Count" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="oceanAchievements" VariableExpression="${var:oceanAchievements} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${lvar:oceanObjectives[1]}" ExpressionTypeL="String" ExpressionR="(Jellyfish|Mantas|Fugu|Sharks|Octopodes|Crabs|Seadragons)" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="oceanAchievements" VariableExpression="${var:oceanAchievements} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${lvar:oceanObjectives[2]}" ExpressionTypeL="String" ExpressionR="(Jellyfish|Mantas|Fugu|Sharks|Octopodes|Crabs|Seadragons)" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="7" TextAuraFontSize="14.25" TextAuraForeground="#80FFFF" TextAuraBackground="Black" TextAuraName="oceanSpectralCounter" TextAuraExpression="${var:oceanSpectralCount} Spectrals" TextAuraXIniExpression="(${_screenwidth}/2)-200" TextAuraYIniExpression="(${_screenheight}/2)+210" TextAuraWIniExpression="400/(${var:oceanAchievements}+1)" TextAuraHIniExpression="40" TextAuraOIniExpression="80" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="8" TextAuraFontSize="14.25" TextAuraForeground="#80FFFF" TextAuraBackground="Black" TextAuraName="oceanCrabsCounter" TextAuraExpression="${var:oceanCrabsCount}/250 Crabs" TextAuraXIniExpression="(${_screenwidth}/2)-200+((400/(${var:oceanAchievements}+1))*(${lvar:oceanObjectives.indexof(Crabs)}))" TextAuraYIniExpression="(${_screenheight}/2)+210" TextAuraWIniExpression="(400/(${var:oceanAchievements}+1))" TextAuraHIniExpression="40" TextAuraOIniExpression="80" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${lvar:oceanObjectives.indexof(Crabs)}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="9" TextAuraFontSize="14.25" TextAuraForeground="#80FFFF" TextAuraBackground="Black" TextAuraName="oceanFuguCounter" TextAuraExpression="${var:oceanFuguCount}/250 Fugu" TextAuraXIniExpression="(${_screenwidth}/2)-200+((400/(${var:oceanAchievements}+1))*(${lvar:oceanObjectives.indexof(Fugu)}))" TextAuraYIniExpression="(${_screenheight}/2)+210" TextAuraWIniExpression="(400/(${var:oceanAchievements}+1))" TextAuraHIniExpression="40" TextAuraOIniExpression="80" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${lvar:oceanObjectives.indexof(Fugu)}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="10" TextAuraFontSize="14.25" TextAuraForeground="#80FFFF" TextAuraBackground="Black" TextAuraName="oceanMantasCounter" TextAuraExpression="${var:oceanMantasCount}/25 Mantas" TextAuraXIniExpression="(${_screenwidth}/2)-200+((400/(${var:oceanAchievements}+1))*(${lvar:oceanObjectives.indexof(Mantas)}))" TextAuraYIniExpression="(${_screenheight}/2)+210" TextAuraWIniExpression="(400/(${var:oceanAchievements}+1))" TextAuraHIniExpression="40" TextAuraOIniExpression="80" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${lvar:oceanObjectives.indexof(Mantas)}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="11" TextAuraFontSize="14.25" TextAuraForeground="#80FFFF" TextAuraBackground="Black" TextAuraName="oceanSharksCounter" TextAuraExpression="${var:oceanSharksCount}/200 Sharks" TextAuraXIniExpression="(${_screenwidth}/2)-200+(400/(${var:oceanAchievements}+1)*${lvar:oceanObjectives.indexof(Sharks)})" TextAuraYIniExpression="(${_screenheight}/2)+210" TextAuraWIniExpression="(400/(${var:oceanAchievements}+1))" TextAuraHIniExpression="40" TextAuraOIniExpression="80" TextAuraTTLTickExpression="200-${var:oceanSharksCount}&gt;0" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${lvar:oceanObjectives.indexof(Sharks)}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="12" TextAuraFontSize="14.25" TextAuraForeground="#80FFFF" TextAuraBackground="Black" TextAuraName="oceanSeadragonsCounter" TextAuraExpression="${var:oceanSeadragonsCount}/100 Seadragons" TextAuraXIniExpression="(${_screenwidth}/2)-200+(400/(${var:oceanAchievements}+1)*${lvar:oceanObjectives.indexof(Seadragons)})" TextAuraYIniExpression="(${_screenheight}/2)+210" TextAuraWIniExpression="(400/(${var:oceanAchievements}+1))" TextAuraHIniExpression="40" TextAuraOIniExpression="80" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${lvar:oceanObjectives.indexof(Seadragons)}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="13" TextAuraFontSize="14.25" TextAuraForeground="#80FFFF" TextAuraBackground="Black" TextAuraName="oceanOctopodesCounter" TextAuraExpression="${var:oceanOctopodesCount}/150 Octopodes" TextAuraXIniExpression="(${_screenwidth}/2)-200+((400/(${var:oceanAchievements}+1))*(${lvar:oceanObjectives.indexof(Octopodes)}))" TextAuraYIniExpression="(${_screenheight}/2)+210" TextAuraWIniExpression="(400/(${var:oceanAchievements}+1))" TextAuraHIniExpression="40" TextAuraOIniExpression="80" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${lvar:oceanObjectives.indexof(Octopodes)}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="14" TextAuraFontSize="14.25" TextAuraForeground="#80FFFF" TextAuraBackground="Black" TextAuraName="oceanJellyfishCounter" TextAuraExpression="${var:oceanJellyfishCount}/150 Jellyfish" TextAuraXIniExpression="(${_screenwidth}/2)-200+(400/(${var:oceanAchievements}+1)*${lvar:oceanObjectives.indexof(Jellyfish)})" TextAuraYIniExpression="(${_screenheight}/2)+210" TextAuraWIniExpression="(400/(${var:oceanAchievements}+1))" TextAuraHIniExpression="40" TextAuraOIniExpression="80" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${lvar:oceanObjectives.indexof(Jellyfish)}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="15" OBSEndPoint="" VariableOp="SetNumeric" VariableName="oceanSpectralActive" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="16" OBSEndPoint="" VariableOp="SetNumeric" VariableName="oceanSpectralTime" VariableExpression="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="true" Grouping="Or">
+          <ConditionSingle Enabled="true" ExpressionL="${elvar:oceanObjectives}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+        </Condition>
+      </Trigger>
+      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Spectral Triggered" Id="128916f5-c934-41ee-8df7-384b7de94e0e" RegularExpression="(^00\|[^|]*\|[^|]*\|Foerzagyl\|.*(?i)(spectral current))|(Spectral Triggered)">
+        <Actions>
+          <Action OrderNumber="1" TextAuraFontSize="14.25" TextAuraForeground="Lime" TextAuraBackground="Black" TextAuraName="oceanSpectralCounter" TextAuraExpression="${numeric:${var:oceanSpectralTime}*60-${_since}} sec" TextAuraXIniExpression="(${_screenwidth}/2)-200" TextAuraYIniExpression="(${_screenheight}/2)+210" TextAuraWIniExpression="400/(${var:oceanAchievements}+1)" TextAuraHIniExpression="40" TextAuraOIniExpression="80" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" OBSEndPoint="" VariableOp="SetNumeric" VariableName="oceanSpectralActive" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="3" OBSEndPoint="" VariableOp="SetNumeric" VariableName="oceanSpectralTime" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="${numeric:${var:oceanSpectralTime}*60000}">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:oceanSpectralActive}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="4" TextAuraFontSize="14.25" TextAuraForeground="#00FF80" TextAuraBackground="Black" TextAuraName="oceanSpectralCounter" TextAuraExpression="Spectral Complete!" TextAuraXIniExpression="(${_screenwidth}/2)-200" TextAuraYIniExpression="(${_screenheight}/2)+210" TextAuraWIniExpression="400/(${var:oceanAchievements}+1)" TextAuraHIniExpression="40" TextAuraOIniExpression="80" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:oceanSpectralActive}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="5" OBSEndPoint="" VariableOp="SetNumeric" VariableName="oceanSpectralActive" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+      <Trigger Enabled="true" Name="# About" Id="14c4fa53-8af6-4ebe-8c73-802f329a2800" RegularExpression="" Description="Everything should work automatically without configuration.&#xD;&#xA;If you find any bugs please feel free to message me on discord: Aubis2#1355&#xD;&#xA;Github for the project https://github.com/austinglines42/TriggernometryOceanFishing">
+        <Actions />
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+    </Triggers>
+  </ExportedFolder>
+</TriggernometryExport>
