@@ -24,7 +24,6 @@
 * These triggers do use C# code. The code is used to calculate the current route. If you're worried about the code you can review it yourself in the [TriggernometryOceanFishing.cs](https://github.com/austinglines42/TriggernometryOceanFishing/blob/v1.0.1/TriggernometryOceanFishing.cs) file. (I'm planning to remove in the future but at the current moment it simplifies the process a lot)
 * Does not track players more than 20 yalms away.
 * Does not track blue fish.
-* Some jankyness can happen if you have a spectral that ends early into an early spectral.
 
 <br>
 
