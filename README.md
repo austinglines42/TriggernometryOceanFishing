@@ -31,7 +31,7 @@
 ## Method 1: Remote trigger
 1. Right click on "Remote triggers" then select "Add" then "Repository".
 2. You can put anything for "Repository Name" and for "Address" you put: `https://raw.githubusercontent.com/austinglines42/TriggernometryOceanFishing/main/TriggernometryOceanFishing.xml`
-3. Make sure to check "Allow triggers to execute scripts". It is safe to use but you can read more about it in the Limitations and Bugs section.
+3. Make sure to enable "Allow triggers to execute scripts". It is safe to use but you can read more about it in the Limitations and Bugs section.
 4. (Optional): In the updates tab you can have my script auto update when there's an update by enabling "Enable repository auto-update". At the current moment I'm updating the repository a lot, so daily updates are recommended.
 
 <br>
