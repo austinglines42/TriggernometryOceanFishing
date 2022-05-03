@@ -246,7 +246,7 @@
           <ConditionSingle Enabled="true" ExpressionL="${elvar:oceanObjectives}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
         </Condition>
       </Trigger>
-      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Spectral Triggered" Id="128916f5-c934-41ee-8df7-384b7de94e0e" RegularExpression="^00\|[^|]*\|[^|]*\|Foerzagyl\|(A fish ain't all [A-Za-z']* [A-Za-z']* pulled out of the water! Here comes a spectral current!|We've got [A-Za-z']* [A-Za-z']* to thank for this spectral current! No one's going home hungry tonight!|Looks like [A-Za-z']* [A-Za-z']* fished up Lady Luck herself! Here comes a spectral current!A fish ain't all [A-Za-z']* [A-Za-z']* pulled out of the water! Here comes a spectral current!)">
+      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Spectral Triggered" Id="128916f5-c934-41ee-8df7-384b7de94e0e" RegularExpression="^00\|[^|]*\|[^|]*\|Foerzagyl\|(A fish ain't all [A-Za-z']* [A-Za-z']* pulled out of the water! Here comes a spectral current!|We've got [A-Za-z']* [A-Za-z']* to thank for this spectral current! No one's going home hungry tonight!|Looks like [A-Za-z']* [A-Za-z']* fished up Lady Luck herself! Here comes a spectral current!|A fish ain't all [A-Za-z']* [A-Za-z']* pulled out of the water! Here comes a spectral current!)">
         <Actions>
           <Action OrderNumber="1" TextAuraFontSize="14.25" TextAuraForeground="Lime" TextAuraBackground="Black" TextAuraName="oceanSpectralCounter" TextAuraExpression="${var:oceanSpectralTimer} sec" TextAuraXIniExpression="(${_screenwidth}/2)-200" TextAuraYIniExpression="(${_screenheight}/2)+210" TextAuraWIniExpression="400/(${var:oceanAchievements}+1)" TextAuraHIniExpression="40" TextAuraOIniExpression="80" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
             <Condition Enabled="false" Grouping="Or" />
@@ -295,7 +295,6 @@
         <Condition Enabled="true" Grouping="Or">
           <ConditionSingle Enabled="true" ExpressionL="${evar:oceanSpectralCount}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
         </Condition>
-        <Conditions />
       </Trigger>
     </Triggers>
   </ExportedFolder>
